@@ -9,6 +9,6 @@ COPY src /
 
 RUN /tmp/install/oc-bareos-webui.sh
 
-EXPOSE 9000
+EXPOSE 80
 
 ENTRYPOINT /entrypoint
