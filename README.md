@@ -1,20 +1,17 @@
-# Docker image: Bareos Web UI on CentOS 7 with PHP-FPM from IUS
-This image starts the bareos web-ui
-
-Options to php-fpm can be passed by setting the PHP_OPTIONS variable
+# Docker image: Bareos Web UI on CentOS 7 with Apache and PHP 7.1 from IUS
+This image starts the bareos web-ui. You need to override the /etc/bareos-webui
+directory with your own, containing meaningful settings.
 
 ## Usage:
 ### Simple usage
 ```
-docker run -d -p 9000:9000 \
+docker run -d -p 80:80 \
     registry.ott-consult.de/oc/bareos-webui:latest
 ```
 
 ### Complete example
 ```
-docker run -d -p 9000:9000 \
-    -e PHP_OPTIONS='-d date.timezone = "Europe/Berlin"'
-    -v /data/phpapp/etc/php-fpm.d/www.conf:/etc/php-fpm.d/www.conf \
-    -v /data/phpapp/php:/php \
+docker run -d -p 80:80 \
+    -v /data/bareos-webui/etc/bareos-webui:/etc/bareos-webui \
     registry.ott-consult.de/oc/bareos-webui:latest
 ```
