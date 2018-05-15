@@ -1,4 +1,4 @@
-FROM registry.ott-consult.de/oc/apache-php:7.1
+FROM registry.ott-consult.de/oc/apache-php:7.2
 LABEL MAINTAINER="joern.ott@ott-consult.de"
 
 ENV WEBUI_VERSION=17.2.4 \
